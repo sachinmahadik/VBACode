@@ -1,0 +1,28 @@
+Sub RunPythonScript()
+    ' This micro is used to run the python script so if wan to build script in python.
+
+
+    Dim Ret_Val As Double
+    Dim args As String
+    
+    ' Specify the path to your Python executable
+    Dim pythonExePath As String
+    pythonExePath = "C:\Users\sachin.mahadik\AppData\Local\Programs\Python\Python310\python.exe"
+    
+    ' Specify the path to your Python script
+    Dim pythonScriptPath As String
+    pythonScriptPath = "C:\Users\sachin.mahadik\Desktop\Python" & "\Try.py"
+    
+    ' Build the full command
+    args = pythonExePath & " " & pythonScriptPath
+    
+    ' Execute the Python script
+    Ret_Val = Shell(args, vbNormalFocus)
+    
+    ' Check if the call succeeded
+    If Ret_Val = 0 Then
+        MsgBox "Couldn't run Python script!", vbOKOnly
+    End If
+    
+End Sub
+
